@@ -25,7 +25,8 @@ Las reglas que cree son
 - iterativa:    Crea un load por cada atuendo -> 133
 - maxToMin:     Ordena de mayor a menor tiempo y crea loads con los de mayor tiempo e intenta agregar nuevos
                 de mayor a menor
-
+- RandomSearch: Crea permutaciones de ropas y va creando loads en base a ese orden. Luego itera muchas permutaciones
+                y se queda con la que mejor performe
 
 comentarios finales
 
