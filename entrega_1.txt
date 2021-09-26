@@ -1,7 +1,20 @@
-impresion inicial del problema
-
-La primer impresión del problema es
-
-ideas de como lo van a intentar resolver
-comentarios sobre los cambios que hagan en el codigo a medida que intentan mejorar el resultado
-comentarios finales
+1 1
+2 2
+3 3
+4 4
+5 5
+6 6
+7 7
+8 8
+9 9
+10 10
+11 11
+12 12
+13 13
+14 14
+15 15
+16 16
+17 17
+18 18
+19 19
+20 20

@@ -8,10 +8,12 @@ from models.laundry_schedule.Load import Load
 class IterativeRule(AbstractRule):
     def process(self, garmets:list[Garmet]) -> list[Load]:
         
-        load = Load()
+        loads = []
 
-        for garmet in garmets: 
+        for garmet in garmets:
+            load = Load()
             load.add(garmet=garmet)
+            loads.append(load)
 
 
-        return [load]
+        return loads

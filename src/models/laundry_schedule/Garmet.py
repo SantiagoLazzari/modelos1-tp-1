@@ -10,3 +10,6 @@ class Garmet():
         self.id = id
         self.restricitons = restrictions
         self.time = time
+
+    def __str__(self):
+        return f"id: {self.id}, restrictions: {self.restricitons}, time: {self.time}"
