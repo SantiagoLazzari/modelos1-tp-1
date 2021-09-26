@@ -34,7 +34,7 @@ class LaundryScheduleFactory():
 
                 if 'n' in lineType:
                     garmet = splittedLine[1]
-                    time = splittedLine[2]
+                    time = int(splittedLine[2])
                     times[garmet] = time
             
             for garmet in restrictions:
