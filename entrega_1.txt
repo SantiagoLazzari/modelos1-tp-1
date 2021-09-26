@@ -1,20 +1,33 @@
-1 1
-2 2
-3 3
-4 4
-5 5
-6 6
-7 7
-8 8
-9 9
-10 10
-11 11
-12 12
-13 13
-14 14
-15 15
-16 16
-17 17
-18 18
-19 19
-20 20
+# impresion inicial del problema
+
+En primera instancia me constó entender el enunciado, luego de varias lecturas pude entender
+de qué trataba el problema. Es simple de resolver pero se pueden construir varios algoritmos
+para intentarlo. Habiendo dicho esto, cree la arquitectura de la solución para que sea facil 
+agregar algoritmos nuevos y compararlos. 
+
+# ideas de como lo van a intentar resolver
+
+Para resolverlo primero tengo que crear un modelado de la solución. Dado que era muy tedioso
+meter mano en la herramienta de c++, decidí armar un programa en python que resuelva todo el
+problema. Para eso, hay que crear el modelarlo y se me ocurrió que podia crear clases por cada
+elemento en el modelo de dominio y directamente trabajar con eso que hace todo mas sensillo.
+Una vez creadas las clases load y garmet (carga y atuendo), voy a crear un parser del .txt para
+inicializar esas clases. Por otro lado voy a crear una clase de out, que permita imprimir en
+pantalla de forma verbose y no verbose para obtener los resultados. Finalmente voy a crear
+varias reglas para resolver el problema y van a ser inyectadas al loadSchedule para resolver el
+problema del ejercicio.
+
+# comentarios sobre los cambios que hagan en el codigo a medida que intentan mejorar el resultado
+
+primero cree todo el framework para poder hacer reglas de resolución del ejercicio, y luego las reglas.
+
+Las reglas que cree son 
+- iterativa:    Crea un load por cada atuendo -> 133
+- maxToMin:     Ordena de mayor a menor tiempo y crea loads con los de mayor tiempo e intenta agregar nuevos
+                de mayor a menor
+
+
+
+comentarios finales
+
+Estuvo bueno para entender la complejidad que puede tener un problema que a la vista parece sensilllo
