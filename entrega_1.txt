@@ -27,7 +27,6 @@ Las reglas que cree son
                 de mayor a menor
 
 
-
 comentarios finales
 
-Estuvo bueno para entender la complejidad que puede tener un problema que a la vista parece sensilllo
+Estuvo bueno para entender la complejidad que puede tener un problema que a la vista parece sencillo
