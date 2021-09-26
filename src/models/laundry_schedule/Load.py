@@ -18,10 +18,10 @@ class Load():
         return time
 
     def isGarmetsCompatible(self, garmets: list[Garmet]) -> bool:
-        loadGarmetIds = list(map(lambda x : x.id, self.garmets))
+        loadGarmetIds = list(map(lambda x : x.id, garmets))
         loadGarmetIncompatibleIds = []
 
-        for garmet in self.garmets:
+        for garmet in garmets:
             loadGarmetIncompatibleIds += garmet.restricitons
 
         for loadGarmetId in loadGarmetIds:

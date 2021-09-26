@@ -9,7 +9,6 @@ class MaxToMinRule(AbstractRule):
 
         garmets.sort(key=lambda x: x.time, reverse=True)
         
-            
         for garmet in garmets:
             couldAddToLoad = False
             for load in loads:
