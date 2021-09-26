@@ -12,4 +12,4 @@ class Garmet():
         self.time = time
 
     def __str__(self):
-        return f"id: {self.id}, restrictions: {self.restricitons}, time: {self.time}"
+        return f'id: {self.id}, restrictions: {self.restricitons}, time: {self.time}'

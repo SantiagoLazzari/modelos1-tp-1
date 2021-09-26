@@ -8,7 +8,7 @@ class LoadsOutput():
             print(f"Load {loadCount} has garmets {list(map(lambda x : x.id, load.garmets))} and its total time is {load.totalTime()}")
             loadCount += 1
             totalTime += load.totalTime()
-            print(f"Load is correct {load.isCorrect()}")
+            print(f"Load is correct {load.isLoadCompatible()}")
 
         print(f"total time is {totalTime}")
 

@@ -17,7 +17,7 @@ class Load():
 
         return time
 
-    def isCorrect(self) -> bool:
+    def isGarmetsCompatible(self, garmets: list[Garmet]) -> bool:
         loadGarmetIds = list(map(lambda x : x.id, self.garmets))
         loadGarmetIncompatibleIds = []
 
@@ -29,3 +29,11 @@ class Load():
                 return False
 
         return True
+
+    def isLoadCompatible(self) -> bool:
+        return self.isGarmetsCompatible(garmets=self.garmets)
+
+    def canAdd(self, garmet: Garmet) -> bool:
+        garmetsCandidate = self.garmets.copy()
+        garmetsCandidate.append(garmet)
+        return self.isGarmetsCompatible(garmets=garmetsCandidate)
