@@ -1,0 +1,4 @@
+impresion inicial del problema
+ideas de como lo van a intentar resolver
+comentarios sobre los cambios que hagan en el codigo a medida que intentan mejorar el resultado
+comentarios finales
