@@ -1,4 +1,7 @@
 impresion inicial del problema
+
+La primer impresión del problema es
+
 ideas de como lo van a intentar resolver
 comentarios sobre los cambios que hagan en el codigo a medida que intentan mejorar el resultado
 comentarios finales
