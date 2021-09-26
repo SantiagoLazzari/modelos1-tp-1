@@ -12,7 +12,7 @@ def main():
     rule = MaxToMinRule()
     loads = laudrySchedule.loadsWithRule(rule=rule)
     output = LoadsOutput()
-    output.showOutputVerbose(loads=loads)
+    output.showOutput(loads=loads)
 
 if __name__ == '__main__':
     main()
