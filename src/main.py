@@ -11,10 +11,10 @@ def main():
     argParser = ArgParser()
     laundryScheduleFactory = LaundryScheduleFactory()
     laudrySchedule = laundryScheduleFactory.getFrom(inputFile=argParser.inputValue())
-    rule = IterativeRule()
+    rule = MaxToMinRule()
     loads = laudrySchedule.loadsWithRule(rule=rule)
     output = LoadsOutput()
-    output.showOutputVerbose(loads=loads)
+    # output.showOutputVerbose(loads=loads)
     output.showOutput(loads=loads)
 
 
