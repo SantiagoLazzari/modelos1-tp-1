@@ -11,7 +11,7 @@ def main():
     argParser = ArgParser()
     laundryScheduleFactory = LaundryScheduleFactory()
     laudrySchedule = laundryScheduleFactory.getFrom(inputFile=argParser.inputValue())
-    rule = RandomSearchRule()
+    rule = IterativeRule()
     loads = laudrySchedule.loadsWithRule(rule=rule)
     output = LoadsOutput()
     output.showOutputVerbose(loads=loads)
