@@ -13,7 +13,7 @@ class MaxToMinGeneticPermutationRule(AbstractRule):
 		bestLoadCollectionSpecies = list[LoadCollection]()
 		# hyperparameters
 		speciesCount = 2
-		generationsCount = 10
+		generationsCount = 1000
 		childsPerSpecies = 5
 
 		# Initial Species

@@ -30,6 +30,15 @@ minimos locales, va a haber 5 mejores resultados y se le van a hacer 10 permutac
 y devuelta nos vamos a quedar con los 5 mejores. Este algoritmo performó muchisimo mejor que el anterior y llega a 
 resultados mas rapido.
 
+Lo que resta es ir modificando los hiperparámetros, por lo que llegúe a probar, si aumento mucho las especies y
+los hijos, empeora el algoritmo. Los hiperparámetros finales utilizados fueron
+
+speciesCount = 2
+generationsCount = 1000
+childsPerSpecies = 5
+
+empeora mi algoritmo
+
 
 # comentarios finales
 
