@@ -37,7 +37,8 @@ speciesCount = 2
 generationsCount = 1000
 childsPerSpecies = 5
 
-empeora mi algoritmo
+- MaxToMinGeneticClosePremutation: Finalmente, me di cuenta que las permutaciones aleatorias podia acercarlas para que
+se permuten entre prendas con similar tiempo para ver si esto mejoraba el algritmo pero no mejoró :(
 
 
 # comentarios finales

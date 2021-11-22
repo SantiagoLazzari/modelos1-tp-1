@@ -6,15 +6,16 @@ from models.laundry_schedule.Load import Load
 import random
 
 
-class MaxToMinGeneticPermutationRule(AbstractRule):
+class MaxToMinGeneticClosePremutation(AbstractRule):
 
 	def process(self, garmets:list[Garmet]) -> LoadCollection:
 		garmets.sort(key=lambda x: x.time, reverse=True)
 		bestLoadCollectionSpecies = list[LoadCollection]()
 		# hyperparameters
 		speciesCount = 5
-		generationsCount = 1000
+		generationsCount = 100
 		childsPerSpecies = 2
+		pivotMaxSize = 6
 
 		# Initial Species
 		for species in range(speciesCount):
@@ -30,6 +31,12 @@ class MaxToMinGeneticPermutationRule(AbstractRule):
 				for child in range(childsPerSpecies):
 					childGarmets = species.garmets.copy()
 					x = random.randrange(len(garmets))
+					y = None 
+					pivotSize = random.randrange(pivotMaxSize)
+					if x >= pivotMaxSize:
+						y = x - pivotSize
+					else:
+						y = x + pivotSize
 					y = random.randrange(len(garmets))
 					oldX = childGarmets[x]
 					oldY = childGarmets[y]
@@ -43,8 +50,7 @@ class MaxToMinGeneticPermutationRule(AbstractRule):
 
 			random.shuffle(generationLoadCollections)
 			generationLoadCollections.sort(key=lambda x: x.loadTime())
-			print(list(map(lambda x: x.loadTime(),generationLoadCollections)))
+			print(f"generation: {generation}, {list(map(lambda x: x.loadTime(),generationLoadCollections))}")
 			bestLoadCollectionSpecies = generationLoadCollections[:speciesCount]
 
-		
 		return bestLoadCollectionSpecies[0]

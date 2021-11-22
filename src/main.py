@@ -5,6 +5,7 @@ from models.rules.MaxToMinRule import MaxToMinRule
 from models.rules.RandomSearchRule import RandomSearchRule
 from models.rules.MaxToMinRandomPermutationRule import MaxToMinRandomPermutationRule
 from models.rules.MaxToMinGeneticPermutationRule import MaxToMinGeneticPermutationRule
+from models.rules.MaxToMinGeneticClosePremutation import MaxToMinGeneticClosePremutation
 
 from models.output.LoadsOutput import LoadsOutput
 
@@ -18,7 +19,8 @@ def main():
 	output = LoadsOutput()
 
 	# Rules
-	rule = MaxToMinGeneticPermutationRule()
+	rule = MaxToMinGeneticClosePremutation()
+	# rule = MaxToMinGeneticPermutationRule()
 	# rule = MaxToMinRandomPermutationRule()
 	# rule = MaxToMinRule()
 	# rule = RandomSearchRule()
