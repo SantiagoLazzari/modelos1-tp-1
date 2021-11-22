@@ -7,21 +7,23 @@ import random
 class RandomSearchRule(AbstractRule):
 	def process(self, garmets:list[Garmet]) -> LoadCollection:
 		
-		bestLoadCollection = LoadCollection(loads=[])
+		bestLoadCollection = None
 
-		for x in range(1000):
+		for x in range(10):
 			randomShuffle = random.shuffle(garmets)
-
 			loadCollection = LoadCollection(loads=[])
 			
 			for garmet in garmets:
 				loadCollection.addGarmetToCollectionOrAddNewLoad(garmet=garmet)
+
+			if bestLoadCollection == None:
+				bestLoadCollection = loadCollection
+				continue
 			
 			totalTime = loadCollection.loadTime()
 			bestLoadCollectionTime = bestLoadCollection.loadTime()
 			print(totalTime)
-			
 			if totalTime < bestLoadCollectionTime:
-				bestLoadsCollection = loadCollection
-				
+				bestLoadCollection = loadCollection
+
 		return bestLoadCollection

@@ -4,6 +4,7 @@ from models.laundry_schedule.Garmet import Garmet
 class LoadCollection():
 	def __init__(self, loads: list[Load]):
 		self.loads = loads
+		self.garmets = []
 
 
 	def loadTime(self):
@@ -30,3 +31,5 @@ class LoadCollection():
 			newLoad = Load()
 			newLoad.add(garmet=garmet)
 			self.loads.append(newLoad)
+		
+		self.garmets.append(garmet)

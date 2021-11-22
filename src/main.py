@@ -4,7 +4,7 @@ from models.rules.IterativeRule import IterativeRule
 from models.rules.MaxToMinRule import MaxToMinRule
 from models.rules.RandomSearchRule import RandomSearchRule
 from models.rules.MaxToMinRandomPermutationRule import MaxToMinRandomPermutationRule
-from models.rules.MaxToMinWithRestrictionsRule import MaxToMinWithRestrictionsRule
+from models.rules.MaxToMinGeneticPermutationRule import MaxToMinGeneticPermutationRule
 
 from models.output.LoadsOutput import LoadsOutput
 
@@ -18,17 +18,18 @@ def main():
 	output = LoadsOutput()
 
 	# Rules
+	rule = MaxToMinGeneticPermutationRule()
 	# rule = MaxToMinRandomPermutationRule()
 	# rule = MaxToMinRule()
-	rule = RandomSearchRule()
+	# rule = RandomSearchRule()
 
 	# Schedule
 	laudrySchedule = laundryScheduleFactory.getFrom(inputFile=argParser.inputValue(), rule=rule)
 
 	# Output
-	output.showOutputVerbose(loadCollection=laudrySchedule.loadCollection)
-	# output.showOutput(loads=loads)
+	# output.showOutputVerbose(loadCollection=laudrySchedule.loadCollection)
+	output.showOutput(loadCollection=laudrySchedule.loadCollection)
 
 
 if __name__ == '__main__':
-    main()
+	main()

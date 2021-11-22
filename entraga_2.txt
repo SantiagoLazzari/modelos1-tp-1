@@ -17,7 +17,24 @@ Al reutilizar las reglas creadas estos fueron los resultados
 lo proximo que estaria bueno es mezclar la idea del maxToMin + un random. Seria un random search pero con una 
 heurística.
 
+Una cosa que me di cuenta es que hay muchas prendas con el mismo tiempo de limpiado, lo que significa
 
+- MaxToMinRandomPermutationRule:se en 1000 iteraciones aproximadamente se llega a alrededor de 481 y la idea
+es que el orden inicial es el mismo del MaxToMinRule, y voy a haciendo permutaciones aleatorias de 2 prendas
+Si esta permutacion mejora el tiempo -> reemplazo el orden original con este nuevo orden, de lo contrario
+vuelvo al ordenamiento anterior. Un problema de este algoritmo es que quizas me aserco a minimos locales y 
+no minimos totales.
+
+- MaxToMinGeneticPermutations: La idea del algoritmo es similar al anterior pero para tratar de mitigar los 
+minimos locales, va a haber 5 mejores resultados y se le van a hacer 10 permutaciones aeatorias a cada especie
+y devuelta nos vamos a quedar con los 5 mejores. Este algoritmo performó muchisimo mejor que el anterior y llega a 
+resultados mas rapido.
 
 
 # comentarios finales
+
+Al armar los distintos algoritmos me di cuenta que tiene que existir un orden optimo de las prendas para que
+al aplicar mi algoritmo de ir agregando o creando a mi colección de loads llegue a mi solución final optima. 
+Lo que hice entonces es hacer pruebas de cómo puedo hacer la lista de las prendas para que a la hora de 
+insertarlas en mi colección de lodas esta fuera optima. Por eso le dediqué mucho a ver como ordenar dichas
+prendas ya que el problema original se camió a ver como ordeno ese arreglo.

@@ -10,8 +10,7 @@ class MaxToMinRandomPermutationRule(AbstractRule):
 		bestLoadCollection = None
 		garmets.sort(key=lambda x: x.time, reverse=True)
 
-		for x in range(10):
-
+		for x in range(1000):
 			x = random.randrange(len(garmets))
 			y = random.randrange(len(garmets))
 			oldX = garmets[x]
@@ -22,15 +21,19 @@ class MaxToMinRandomPermutationRule(AbstractRule):
 			
 			for garmet in garmets:
 				loadCollection.addGarmetToCollectionOrAddNewLoad(garmet=garmet)
-				
+
+			if bestLoadCollection == None:
+				bestLoadCollection = loadCollection
+				continue
+			
 			totalTime = loadCollection.loadTime()
-			print(totalTime)
-
-			if totalTime < bestLoads[1]:
-				bestLoads = (bestLoads[0], totalTime)
+			bestLoadCollectionTime = bestLoadCollection.loadTime()
+			print(f"total time: {totalTime}, best time: {bestLoadCollectionTime}")
+			
+			if totalTime < bestLoadCollectionTime:
+				bestLoadCollection = loadCollection
 			else:
+				garmets[x] = oldX
 				garmets[y] = oldY
-				garmets[x] = oldX 
 
-
-		return bestLoads[0]
+		return bestLoadCollection
