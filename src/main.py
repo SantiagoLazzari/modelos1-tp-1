@@ -3,19 +3,31 @@ from models.laundry_schedule.LaundryScheduleFactory import LaundryScheduleFactor
 from models.rules.IterativeRule import IterativeRule
 from models.rules.MaxToMinRule import MaxToMinRule
 from models.rules.RandomSearchRule import RandomSearchRule
+from models.rules.MaxToMinRandomPermutationRule import MaxToMinRandomPermutationRule
+from models.rules.MaxToMinWithRestrictionsRule import MaxToMinWithRestrictionsRule
+
 from models.output.LoadsOutput import LoadsOutput
 
 
 
+
 def main():
-    argParser = ArgParser()
-    laundryScheduleFactory = LaundryScheduleFactory()
-    laudrySchedule = laundryScheduleFactory.getFrom(inputFile=argParser.inputValue())
-    rule = IterativeRule()
-    loads = laudrySchedule.loadsWithRule(rule=rule)
-    output = LoadsOutput()
-    # output.showOutputVerbose(loads=loads)
-    output.showOutput(loads=loads)
+	# Dependency Inject
+	argParser = ArgParser()
+	laundryScheduleFactory = LaundryScheduleFactory()
+	output = LoadsOutput()
+
+	# Rules
+	# rule = MaxToMinRandomPermutationRule()
+	# rule = MaxToMinRule()
+	rule = RandomSearchRule()
+
+	# Schedule
+	laudrySchedule = laundryScheduleFactory.getFrom(inputFile=argParser.inputValue(), rule=rule)
+
+	# Output
+	output.showOutputVerbose(loadCollection=laudrySchedule.loadCollection)
+	# output.showOutput(loads=loads)
 
 
 if __name__ == '__main__':

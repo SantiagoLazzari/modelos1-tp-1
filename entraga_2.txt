@@ -1,0 +1,23 @@
+# ideas de como van a resolver esta instancia
+
+Dada la estructura del problema intenté usar las mismas herramientas construidas para el tp1. Empezé por el
+IterativeRule, pero al cargar la solución me indicaba que era invalido. Ahi fue donde encontré un bug que tenia
+que al ser mas grande el problema se me escapo un caso. Corregido eso comenzé usando los algoritmos ya
+implementados.
+
+# comentarios sobre los cambios que hagan en el codigo a medida que intentan mejorar el resultado
+
+Al reutilizar las reglas creadas estos fueron los resultados
+
+- iterativa:	~ 4k
+- maxToMin:		499
+- RandomSearch:	llegue a soluciones ~600 y tardaba mucho. solo pude iterarlo alrededor de 1000 veces, no 
+1000000 como en el problema anterior porque tarda 1 segundo aprox por cada iteración.
+
+lo proximo que estaria bueno es mezclar la idea del maxToMin + un random. Seria un random search pero con una 
+heurística.
+
+
+
+
+# comentarios finales

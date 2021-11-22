@@ -1,7 +1,7 @@
 from models.laundry_schedule.Garmet import Garmet
-from models.laundry_schedule.Load import Load
+from models.laundry_schedule.LoadCollection import LoadCollection
 
 class AbstractRule():
-    def process(self, garmets:list[Garmet]) -> list[Load]:
-        # This method mus be overriten
-        pass
+	def process(self, garmets:list[Garmet]) -> LoadCollection:
+		# This method mus be overriten
+		pass

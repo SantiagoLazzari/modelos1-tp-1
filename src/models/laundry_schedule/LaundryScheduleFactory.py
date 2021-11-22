@@ -1,9 +1,10 @@
 
 from models.laundry_schedule.LaundrySchedule import LaundrySchedule
 from models.laundry_schedule.Garmet import Garmet
+from models.rules.AbstractRule import AbstractRule
 
 class LaundryScheduleFactory():
-	def getFrom(self, inputFile:str) -> LaundrySchedule:
+	def getFrom(self, inputFile:str, rule: AbstractRule) -> LaundrySchedule:
 		with open(inputFile) as fp:
 			lines = fp.readlines()
 
@@ -44,4 +45,4 @@ class LaundryScheduleFactory():
 					restriction = restrictions[garmet]
 				garmets.append(Garmet(id=garmet, restrictions=restriction, time=times[garmet]))
 
-			return LaundrySchedule(garmets=garmets)
+			return LaundrySchedule(garmets=garmets, rule=rule)
